@@ -30,9 +30,7 @@ Results are JSON text. Errors are short, sanitized messages returned with MCP `i
 
 NullBot is a small, auditable Go agent ([Bradthebrad/nullbot](https://github.com/Bradthebrad/nullbot): terminal UI and headless CLI). Its main interface is the desktop app ([Bradthebrad/nullbot_ui](https://github.com/Bradthebrad/nullbot_ui)).
 
-This server has no GitHub release yet, so the desktop app's Tools > Marketplace lists NullBot Drives MCP as "Not released yet" and cannot install it. Once a release with a Windows `.exe` and `SHA256SUMS.txt` is published, "Check for updates" in Tools > Marketplace makes it installable. NullBot refuses to install this server from a release that has no SHA-256 checksum for the file.
-
-After a release exists:
+Install it from Tools > Marketplace in the desktop app. Install fetches the newest release (`v0.1.0` as of this writing) and checks the binary against the release's `SHA256SUMS.txt`; NullBot refuses to install this server from a release without that checksum.
 
 1. Install it from Tools > Marketplace. NullBot downloads the `.exe` into `~/.nullbot/mcp/nullbot-drives-mcp/`, checks it against `SHA256SUMS.txt` and records the hash. Turn the server on (or tick "Turn on after installing").
 2. Add accounts in Settings > Accounts, under Service accounts: Google Drive, OneDrive or iCloud Drive (local). Saving does not contact the provider or check the credentials, so the status reads "Configured locally — unverified". "Allow write/send operations" has no effect for this server; it has no write tools.
